@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Inventory </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Basic -->
+  <ion-accordion-group *ngFor="let fareGroup of fareGroups">
+    <ion-accordion>
+      <ion-item slot="header">
+        <ion-label> {{ fareGroup.createdAt | date:'EEEE LL/dd'}} ({{ fareGroup.total }}.00) </ion-label>
+      </ion-item>
+
+      <ion-list slot="content">
+        <ion-item *ngFor="let fare of fareGroup.values" >
+          <ion-card style="width: 100%;">
+            <ion-card-header>
+              <ion-card-title> {{ fare.fareAt | date:'hh:mm aaa' }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <h2>From {{ fare.from}} to {{ fare.to }}. </h2>
+              <h2 style="margin-top:8px">Total: &#8369; {{ fare.total }}.00</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

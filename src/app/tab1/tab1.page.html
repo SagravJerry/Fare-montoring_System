@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ticketing System
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Select Location
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>From</ion-label>
+      <ion-select [(ngModel)]="from" [compareWith]="compareWith" (ionChange)="c()" placeholder="Select Location">
+        <ion-select-option  *ngFor="let location of locations"  [value]="location" >
+          {{ location.display }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>To</ion-label>
+      <ion-select [(ngModel)]="to" [compareWith]="compareWith" (ionChange)="c()" placeholder="Select Location">
+        <ion-select-option *ngFor="let location of locations"  [value]="location">
+          {{ location.display }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-center">
+    <h1 style="margin-top: 64px;">Total Fare</h1>
+    <h1 class="fare">₱ {{ fare }}.00</h1>
+    <ion-button (click)="print()" [disabled]="fare < 1">
+      Print Reciept
+    </ion-button>
+  </div>
+
+</ion-content>

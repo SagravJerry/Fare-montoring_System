@@ -1,0 +1,7 @@
+{
+  "name": "fare-ticket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
