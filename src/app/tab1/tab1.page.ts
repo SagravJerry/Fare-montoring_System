@@ -12,31 +12,63 @@ export class Tab1Page {
   to: Location = null;
   locations: Location[] = [
     {
-      display: 'Carigara Terminal',
+      display: 'Brgy Caghalo',
+      mark: 15,
+    },
+    {
+      display: 'Brgy Binibihan',
+      mark: 14,
+    },
+    {
+      display: 'Brgy Macalpi',
+      mark: 13,
+    },
+    {
+      display: 'Brgy Paglaum',
+      mark: 12,
+    },
+    {
+      display: 'Brgy Camansi',
+      mark: 11,
+    },
+    {
+      display: 'Brgy Tinaguban',
       mark: 10,
     },
     {
-      display: 'J & F',
+      display: 'Brgy Tigbao',
+      mark: 9,
+    },
+    {
+      display: 'Brgy Candigahub',
       mark: 8,
     },
     {
-      display: 'Carigara Hospital',
+      display: 'Brgy Cutay',
+      mark: 7,
+    },
+    {
+      display: 'Brgy Pangna',
+      mark: 6,
+    },
+    {
+      display: 'Brgy Canfabi',
       mark: 5,
     },
     {
-      display: 'Evsu',
+      display: 'Brgy Barugohay Sur',
       mark: 4,
     },
     {
-      display: 'Sunod Minuswang',
+      display: 'Brgy Canal',
       mark: 3,
     },
     {
-      display: 'Minuswang',
+      display: 'Brgy Balilit',
       mark: 2,
     },
     {
-      display: 'Barugo Terminal',
+      display: 'Carigara Terminal',
       mark: 1,
     },
   ];
@@ -59,7 +91,7 @@ export class Tab1Page {
   }
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Printing reciept...',
+      message: 'Saving...',
       duration: 2000
     });
     await loading.present();
